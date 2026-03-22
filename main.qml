@@ -8,56 +8,27 @@ Window {
     height: 1680
     visible: true
 
-    View3D {
+    property url baseUrl: Qt.resolvedUrl(".")
+
+    StackView {
+        id: stack
         anchors.fill: parent
 
-        environment: SceneEnvironment {
-            clearColor: "#202020"
-            backgroundMode: SceneEnvironment.Color
-        }
+        initialItem: Item {
+            anchors.fill: parent
 
-        PerspectiveCamera {
-            id: camera
-            position: Qt.vector3d(0, 0, 900)
-            clipNear: 1
-            clipFar: 5000
-        }
-
-        DirectionalLight {
-            eulerRotation: Qt.vector3d(-30, -70, 0)
-            brightness: 2
-        }
-
-        Model {
-            id: cube
-            source: "#Cube"
-            scale: Qt.vector3d(1, 1, 1)
-            eulerRotation: Qt.vector3d(20, 30, 0)
-
-            materials: DefaultMaterial {
-                diffuseColor: "steelblue"
+            Rectangle {
+                anchors.fill: parent
+                color: "#202020"
             }
-        }
 
-        Model {
-            source: "#Cube"
-            x: -150
-            scale: Qt.vector3d(0.5, 0.5, 0.5)
-            materials: DefaultMaterial { diffuseColor: "red" }
-        }
-
-        Model {
-            source: "#Cube"
-            x: 150
-            scale: Qt.vector3d(0.5, 0.5, 0.5)
-            materials: DefaultMaterial { diffuseColor: "green" }
-        }
-
-        Model {
-            source: "#Sphere"
-            y: 150
-            scale: Qt.vector3d(0.5, 0.5, 0.5)
-            materials: DefaultMaterial { diffuseColor: "yellow" }
+            Button {
+                text: "Seite2 laden"
+                anchors.centerIn: parent
+                onClicked: {
+                    stack.push(baseUrl + "Seite2.qml")
+                }
+            }
         }
     }
 }
