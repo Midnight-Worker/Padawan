@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
         &app,
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
-    //engine.loadFromModule("Padawan", "Main");
+    //engine.loadFromModule("AndroidBoiler", "Main");
     QString path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)
                    + "/main.qml";
 

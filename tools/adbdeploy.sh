@@ -1,10 +1,10 @@
 alias creator="QT_SCALE_FACTOR=1.5 qtcreator"
 alias fire="adb -s FIRE60000000001187"
 alias emu="adb -s emulator-5554"
-alias r="/home/maik/Padawan/adbreload.sh"
+alias r="/home/maik/sandbox/Androidboiler/tools/adbreload.sh"
 deploy() {
     local src="$1"
-    local pkg="org.qtproject.example.appPadawan"
+    local pkg="org.qtproject.example.appAndroidBoiler"
     local device="${2:-emu}"   # default = emu, optional fire
     local adb_cmd
 
