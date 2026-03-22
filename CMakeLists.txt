@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(AndroidBoiler VERSION 0.1 LANGUAGES CXX)
+project(Padawan VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -15,6 +15,7 @@ qt_add_executable(appAndroidBoiler
 qt_add_qml_module(appAndroidBoiler
     URI AndroidBoiler
     QML_FILES
+        main.qml
 )
 
 
